@@ -1,0 +1,185 @@
+\hypertarget{_component_system_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Component\+System.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <bitset>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{//* Tworzenie klas bez definicji}}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_component}{Component}};}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_entity}{Entity}};}
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_manager}{Manager}};}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//* ID obiketu}}
+\DoxyCodeLine{15 \textcolor{keyword}{using} ComponentID = std::size\_t;}
+\DoxyCodeLine{16 \textcolor{keyword}{using} Group = std::size\_t;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//* Wstawianie ID obiektu w wybrane miejsce}}
+\DoxyCodeLine{19 \textcolor{keyword}{inline} ComponentID getNewComponentTypeID() \{}
+\DoxyCodeLine{20     \textcolor{keyword}{static} ComponentID lastID = 0u;}
+\DoxyCodeLine{21     \textcolor{keywordflow}{return} lastID++;}
+\DoxyCodeLine{22 \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{//* Szablon do pobierania ID obiektu}}
+\DoxyCodeLine{25 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keyword}{inline} ComponentID getComponentTypeID() noexcept \{}
+\DoxyCodeLine{26     \textcolor{keyword}{static\_assert} (std::is\_base\_of<Component, T>::value, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{27     \textcolor{keyword}{static} ComponentID typeID = getNewComponentTypeID();}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} typeID;}
+\DoxyCodeLine{29 \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{//* Maxymalna liczba przetrzymywania Kompoentow oraz Grup}}
+\DoxyCodeLine{32 \textcolor{keyword}{constexpr} std::size\_t maxComponents = 64;}
+\DoxyCodeLine{33 \textcolor{keyword}{constexpr} std::size\_t maxGroups = 64;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{using} ComponentBitSet = std::bitset<maxComponents>;}
+\DoxyCodeLine{36 \textcolor{keyword}{using} GroupBitset = std::bitset<maxGroups>;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{using} ComponentArray = std::array<Component*, maxComponents>;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{//* Definicja klasy wirtualnej do tworzenia komponentow -\/ polimorfizm}}
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43     \mbox{\hyperlink{class_entity}{Entity}}* entity;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init() \{\}}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} update() \{\}}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} update(\mbox{\hyperlink{class_entity}{Entity}}\& Start)  \{\}}
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} draw() \{\}}
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_component}{\string~Component}}() \{\}}
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{//* Definicja klasy}}
+\DoxyCodeLine{53 \textcolor{keyword}{class }\mbox{\hyperlink{class_entity}{Entity}} \{}
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55     \mbox{\hyperlink{class_manager}{Manager}}\& manager;}
+\DoxyCodeLine{56     \textcolor{comment}{//* okreslanie stanu}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{bool} active = \textcolor{keyword}{true};}
+\DoxyCodeLine{58     \textcolor{comment}{//*wektor komponentow z dynamicza wielkoscia }}
+\DoxyCodeLine{59     std::vector<std::unique\_ptr<Component>> components;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     ComponentArray componentArray;}
+\DoxyCodeLine{62     ComponentBitSet componentBitset;}
+\DoxyCodeLine{63     GroupBitset groupBitset;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{public}:}
+\DoxyCodeLine{66     \mbox{\hyperlink{class_entity}{Entity}}(\mbox{\hyperlink{class_manager}{Manager}}\& mManager) : manager(mManager) \{\}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{//* funkcja odswierzajaca }}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} update() \{}
+\DoxyCodeLine{70         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& c : components) c-\/>update();}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{//* funkcja renderujaca}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} draw() \{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& c : components) c-\/>draw();}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{//* funkcja sprawdzajaca aktywnosc }}
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} isActive()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} active; \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{//* funkcja niszczaca/wylaczajaca obiekt}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} destroy() \{ active = \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{//* funkcja sprawdzajaca grupe obiketu}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{bool} hasGroup(Group mGroup) \{}
+\DoxyCodeLine{86         \textcolor{keywordflow}{return} groupBitset[mGroup];}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{//* funkcja dodajaca obiekt do grupy}}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} addGroup(Group mGroup);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{//* funkcja usuwajaca obiekt z grupy}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} delGroup(Group mGroup) \{}
+\DoxyCodeLine{94         groupBitset[mGroup] = \textcolor{keyword}{false};}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{//* szablon do sprawdzania czy dany obiekt posiada dany komponent}}
+\DoxyCodeLine{98     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keywordtype}{bool} hasComponent()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{99         \textcolor{keywordflow}{return} componentBitset[getComponentTypeID<T>()];}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{//* szablon dodawnia do obiekt dany komponent}}
+\DoxyCodeLine{103     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... TArgs>}
+\DoxyCodeLine{104     T\& addComponent(TArgs\&\&... mArgs) \{}
+\DoxyCodeLine{105         T* c(\textcolor{keyword}{new} T(std::forward<TArgs>(mArgs)...));}
+\DoxyCodeLine{106         c-\/>entity = \textcolor{keyword}{this};}
+\DoxyCodeLine{107         std::unique\_ptr<Component>uPtr\{ c \};}
+\DoxyCodeLine{108         components.emplace\_back(std::move(uPtr));}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110         componentArray[getComponentTypeID<T>()] = c;}
+\DoxyCodeLine{111         componentBitset[getComponentTypeID<T>()] = \textcolor{keyword}{true};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113         c-\/>init();}
+\DoxyCodeLine{114         \textcolor{keywordflow}{return} *c;}
+\DoxyCodeLine{115     \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{//* szablon pobierajacy z obiektu dany komponent}}
+\DoxyCodeLine{118     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T> T\& getComponent()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{119         \textcolor{keyword}{auto} ptr(componentArray[getComponentTypeID<T>()]);}
+\DoxyCodeLine{120         \textcolor{keywordflow}{return} *\textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(ptr);}
+\DoxyCodeLine{121     \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{comment}{//* Definicja klasy}}
+\DoxyCodeLine{127 \textcolor{keyword}{class }\mbox{\hyperlink{class_manager}{Manager}} \{}
+\DoxyCodeLine{128 \textcolor{keyword}{private}:}
+\DoxyCodeLine{129     std::vector<std::unique\_ptr<Entity>> entities;}
+\DoxyCodeLine{130     std::array<std::vector<Entity*>, maxGroups> groupedEntities;}
+\DoxyCodeLine{131 \textcolor{keyword}{public}:}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{//* funkcja odswierzjaca}}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} update() \{}
+\DoxyCodeLine{135         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& e : entities) e-\/>update();}
+\DoxyCodeLine{136     \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{comment}{//* funkcja renderujaca}}
+\DoxyCodeLine{139     \textcolor{keywordtype}{void} draw() \{}
+\DoxyCodeLine{140         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& e : entities) e-\/>draw();}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{comment}{//* funkcja odswierzajaca}}
+\DoxyCodeLine{144     \textcolor{keywordtype}{void} refresh() \{}
+\DoxyCodeLine{145         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i(0u); i < maxGroups; i++)}
+\DoxyCodeLine{146         \{}
+\DoxyCodeLine{147             \textcolor{keyword}{auto}\& v(groupedEntities[i]);}
+\DoxyCodeLine{148             v.erase(}
+\DoxyCodeLine{149                 std::remove\_if(std::begin(v), std::end(v),}
+\DoxyCodeLine{150                     [i](\mbox{\hyperlink{class_entity}{Entity}}* mEntity)}
+\DoxyCodeLine{151                     \{}
+\DoxyCodeLine{152                         \textcolor{keywordflow}{return} !mEntity-\/>isActive() || !mEntity-\/>hasGroup(i);}
+\DoxyCodeLine{153                     \}),}
+\DoxyCodeLine{154                 std::end(v));}
+\DoxyCodeLine{155         \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157         entities.erase(std::remove\_if(std::begin(entities), std::end(entities),}
+\DoxyCodeLine{158             [](\textcolor{keyword}{const} std::unique\_ptr<Entity>\& mEntity)}
+\DoxyCodeLine{159             \{}
+\DoxyCodeLine{160                 \textcolor{keywordflow}{return} !mEntity-\/>isActive();}
+\DoxyCodeLine{161             \}),}
+\DoxyCodeLine{162             std::end(entities));}
+\DoxyCodeLine{163     \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{comment}{//* funkcja dodawania do grupy}}
+\DoxyCodeLine{166     \textcolor{keywordtype}{void} AddToGroup(\mbox{\hyperlink{class_entity}{Entity}}* mEntity, Group mGroup) \{}
+\DoxyCodeLine{167         groupedEntities[mGroup].emplace\_back(mEntity);}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     std::vector<Entity*>\& getGroup(Group mGroup) \{}
+\DoxyCodeLine{171         \textcolor{keywordflow}{return} groupedEntities[mGroup];}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     \mbox{\hyperlink{class_entity}{Entity}}\& addEntity() \{}
+\DoxyCodeLine{175         \mbox{\hyperlink{class_entity}{Entity}}* e = \textcolor{keyword}{new} \mbox{\hyperlink{class_entity}{Entity}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{176         std::unique\_ptr<Entity> uPtr\{ e \};}
+\DoxyCodeLine{177         entities.emplace\_back(std::move(uPtr));}
+\DoxyCodeLine{178         \textcolor{keywordflow}{return} *e;}
+\DoxyCodeLine{179     \}}
+\DoxyCodeLine{180 \};}
+
+\end{DoxyCode}

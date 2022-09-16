@@ -1,0 +1,31 @@
+\hypertarget{_map_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Map.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>} }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{//* klasa generujaca mape wyswietlana}}
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_map}{Map}} \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{7     \mbox{\hyperlink{class_map}{Map}}();}
+\DoxyCodeLine{8     \mbox{\hyperlink{class_map}{\string~Map}}();}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{comment}{//* sciezka wczytywanego pliku z tablica}}
+\DoxyCodeLine{11     std::string map\_file;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{comment}{//* funkcja wczytujaca plik i rozpoznajaca elementy wyswietlane}}
+\DoxyCodeLine{14     \textcolor{comment}{//* path -\/ sciezka pliku}}
+\DoxyCodeLine{15     \textcolor{comment}{//* sizeX -\/ definiowanie wilkosci w osi x}}
+\DoxyCodeLine{16     \textcolor{comment}{//* sizeY -\/ definiowanie wilkosci w osi y}}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} LoadMap(std::string path, \textcolor{keywordtype}{int} sizeX, \textcolor{keywordtype}{int} sizeY);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{comment}{//* funkcja tworzaca kafelek wyswietlany}}
+\DoxyCodeLine{20     \textcolor{comment}{//* id -\/ przypisany numer}}
+\DoxyCodeLine{21     \textcolor{comment}{//* x -\/ pozycja osi x}}
+\DoxyCodeLine{22     \textcolor{comment}{//* y -\/ pozycja osi y}}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} AddTile(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26 \};}
+
+\end{DoxyCode}

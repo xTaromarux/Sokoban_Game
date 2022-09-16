@@ -1,0 +1,20 @@
+\hypertarget{_texture_manager_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Texture\+Manager.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Game.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{//* klasa zarzadajaca generowaniem tekstur}}
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_texture_manager}{TextureManager}} \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{7     }
+\DoxyCodeLine{8     \textcolor{comment}{//* funkcje ladujace tekstury z zewnetrznej bibioteki graficznej }}
+\DoxyCodeLine{9     \textcolor{keyword}{static} SDL\_Texture* LoadTexture(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{10     \textcolor{keyword}{static} SDL\_Texture* toTexture(SDL\_Surface* surface, \textcolor{keywordtype}{int} destroySurface);}
+\DoxyCodeLine{11     }
+\DoxyCodeLine{12     \textcolor{comment}{//* funkcja rysujaca tekture}}
+\DoxyCodeLine{13     \textcolor{keyword}{static} \textcolor{keywordtype}{void} Draw(SDL\_Texture* tex, SDL\_Rect src, SDL\_Rect dest, SDL\_RendererFlip flip);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \};}
+
+\end{DoxyCode}

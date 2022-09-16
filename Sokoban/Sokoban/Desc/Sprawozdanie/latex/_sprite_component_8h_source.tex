@@ -1,0 +1,109 @@
+\hypertarget{_sprite_component_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Sprite\+Component.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}TransformComponent.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}TextureManager.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Animation.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}SDL.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//* klasa pozwalajaca wyswietlac postac wraz z animacja ruchu}}
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_sprite_component}{SpriteComponent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{10 \textcolor{keyword}{private}:}
+\DoxyCodeLine{11     \textcolor{comment}{//* wskaznik do klasy}}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_transform_component}{TransformComponent}}* transform;}
+\DoxyCodeLine{13     }
+\DoxyCodeLine{14     \textcolor{comment}{//* odwolania do zmiennych dot. tekstur z biblioteki graficznej}}
+\DoxyCodeLine{15     SDL\_Texture* texture;}
+\DoxyCodeLine{16     SDL\_Rect srcRect, destRect;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{comment}{//* zmienna wskazujaca na stan animacji}}
+\DoxyCodeLine{19     \textcolor{keywordtype}{bool} animated = \textcolor{keyword}{false};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{comment}{//* zmienne wskazujace na ilosc klatek oraz ich predkosc wyswietlania}}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} frames = 1;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} speed = 100;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{comment}{//* zmienna indeksu}}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} animIndex = 0;}
+\DoxyCodeLine{28     }
+\DoxyCodeLine{29     \textcolor{comment}{//* mapa zbierajaca stany animacji}}
+\DoxyCodeLine{30     std::map<const char*, Animation> animations;}
+\DoxyCodeLine{31     SDL\_RendererFlip spriteFlip = SDL\_FLIP\_NONE;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \mbox{\hyperlink{class_sprite_component}{SpriteComponent}}();}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35     \textcolor{comment}{//* konstruktor ustawiajacy teksture}}
+\DoxyCodeLine{36     \textcolor{comment}{//* path -\/ sciezka pliku}}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_sprite_component}{SpriteComponent}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* path) \{}
+\DoxyCodeLine{38         setTexture(path);}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//* konstruktor tworzacy stany animacji wraz z dodaniem do mapy}}
+\DoxyCodeLine{42     \textcolor{comment}{//* path -\/ sciezka pliku}}
+\DoxyCodeLine{43     \textcolor{comment}{//* isAnimated -\/ wskazanie stanu animacji}}
+\DoxyCodeLine{44     \mbox{\hyperlink{class_sprite_component}{SpriteComponent}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* path, \textcolor{keywordtype}{bool} isAnimated) \{}
+\DoxyCodeLine{45         animated = isAnimated;}
+\DoxyCodeLine{46         \mbox{\hyperlink{struct_animation}{Animation}} idle = \mbox{\hyperlink{struct_animation}{Animation}}(0, 1, 100);}
+\DoxyCodeLine{47         \mbox{\hyperlink{struct_animation}{Animation}} walk = \mbox{\hyperlink{struct_animation}{Animation}}(1, 8, 100);}
+\DoxyCodeLine{48         \mbox{\hyperlink{struct_animation}{Animation}} change = \mbox{\hyperlink{struct_animation}{Animation}}(0, 2, 250);}
+\DoxyCodeLine{49         animations.emplace(\textcolor{stringliteral}{"{}Idle"{}}, idle);}
+\DoxyCodeLine{50         animations.emplace(\textcolor{stringliteral}{"{}Walk"{}}, walk);}
+\DoxyCodeLine{51         animations.emplace(\textcolor{stringliteral}{"{}Change"{}}, change);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         play(\textcolor{stringliteral}{"{}Idle"{}});}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         setTexture(path);}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{//* dekonstruktor niszczacy teksture}}
+\DoxyCodeLine{59     \mbox{\hyperlink{class_sprite_component}{\string~SpriteComponent}}() \{\}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{//* funkcja ustawiajaca teksture}}
+\DoxyCodeLine{62     \textcolor{comment}{//* path -\/ sciezka pliku}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} setTexture(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* path) \{}
+\DoxyCodeLine{64         texture = TextureManager::LoadTexture(path);}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{//* funkcja inicjalizacyjna, odwolujaca sie do klasy virtualnej bazowej}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} init()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         transform = \&entity-\/>getComponent<\mbox{\hyperlink{class_transform_component}{TransformComponent}}>();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         srcRect.x = srcRect.y = 0;}
+\DoxyCodeLine{73         srcRect.w = transform-\/>width;}
+\DoxyCodeLine{74         srcRect.h = transform-\/>height;}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{//* funkcja odsiwierzajaca animacje, odwolujaca sie do klasy virtualnej bazowej}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} update()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         \textcolor{keywordflow}{if} (animated) \{}
+\DoxyCodeLine{81             srcRect.x = srcRect.w * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((SDL\_GetTicks() / speed) \% frames);}
+\DoxyCodeLine{82         \}}
+\DoxyCodeLine{83         srcRect.y = animIndex * transform-\/>height;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         destRect.x = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(transform-\/>position.x);}
+\DoxyCodeLine{86         destRect.y = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(transform-\/>position.y);}
+\DoxyCodeLine{87         destRect.w = transform-\/>width * transform-\/>scale;}
+\DoxyCodeLine{88         destRect.h = transform-\/>height * transform-\/>scale;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{//* funkcja wyswietlajaca teksture, odwolujaca sie do klasy virtualnej bazowej}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} draw()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{94         TextureManager::Draw(texture, srcRect, destRect, spriteFlip);}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{//* funkcja wprawiajaca w ruch animacje}}
+\DoxyCodeLine{98     \textcolor{comment}{//* animName -\/ nazwa obiektu}}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} play(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* animName) \{}
+\DoxyCodeLine{100         frames = animations[animName].frames;}
+\DoxyCodeLine{101         animIndex = animations[animName].index;}
+\DoxyCodeLine{102         speed = animations[animName].speed;}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104 \};}
+
+\end{DoxyCode}

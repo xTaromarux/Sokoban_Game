@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sokoban: Dokumentacja klasy Game</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="hedgehog_L.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Sokoban<span id="projectnumber">&#160;V.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Typy publiczne</a> &#124;
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="#pub-static-attribs">Statyczne atrybuty publiczne</a> &#124;
+<a href="class_game-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy Game</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Typy publiczne</h2></td></tr>
+<tr class="memitem:acd4d2b1bae53e21a9ae2d56bcb85ea10"><td class="memItemLeft" align="right" valign="top"><a id="acd4d2b1bae53e21a9ae2d56bcb85ea10" name="acd4d2b1bae53e21a9ae2d56bcb85ea10"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>groupLabels</b> : std::size_t { <br />
+&#160;&#160;<b>groupMap</b>
+, <b>groupPlayer</b>
+, <b>groupMenu</b>
+, <b>groupBoxColliders</b>
+, <br />
+&#160;&#160;<b>groupPoints</b>
+, <b>groupScoreboard</b>
+, <b>groupColliders</b>
+<br />
+ }</td></tr>
+<tr class="separator:acd4d2b1bae53e21a9ae2d56bcb85ea10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a6fb6ab188f447a0b1448f77426a2ad79"><td class="memItemLeft" align="right" valign="top"><a id="a6fb6ab188f447a0b1448f77426a2ad79" name="a6fb6ab188f447a0b1448f77426a2ad79"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> (const char *title, int xpos, int ypos, int width, int height, bool fullscreen)</td></tr>
+<tr class="separator:a6fb6ab188f447a0b1448f77426a2ad79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb5563f62c0c82e3e42ec36501aa5698"><td class="memItemLeft" align="right" valign="top"><a id="adb5563f62c0c82e3e42ec36501aa5698" name="adb5563f62c0c82e3e42ec36501aa5698"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>handleEvents</b> ()</td></tr>
+<tr class="separator:adb5563f62c0c82e3e42ec36501aa5698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79df6376b332d63c9eca0dcee30305c3"><td class="memItemLeft" align="right" valign="top"><a id="a79df6376b332d63c9eca0dcee30305c3" name="a79df6376b332d63c9eca0dcee30305c3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="separator:a79df6376b332d63c9eca0dcee30305c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ddd769261d923827a3cdf41499c843"><td class="memItemLeft" align="right" valign="top"><a id="a15ddd769261d923827a3cdf41499c843" name="a15ddd769261d923827a3cdf41499c843"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()</td></tr>
+<tr class="separator:a15ddd769261d923827a3cdf41499c843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f36a72a2d06696f7973788606f57fc"><td class="memItemLeft" align="right" valign="top"><a id="ad4f36a72a2d06696f7973788606f57fc" name="ad4f36a72a2d06696f7973788606f57fc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clean</b> ()</td></tr>
+<tr class="separator:ad4f36a72a2d06696f7973788606f57fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9af52dcc5835f2a8c37f441a256b9d"><td class="memItemLeft" align="right" valign="top"><a id="afd9af52dcc5835f2a8c37f441a256b9d" name="afd9af52dcc5835f2a8c37f441a256b9d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>running</b> ()</td></tr>
+<tr class="separator:afd9af52dcc5835f2a8c37f441a256b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f320fdca7c566d9dd48e8129f3fb7e1"><td class="memItemLeft" align="right" valign="top"><a id="a2f320fdca7c566d9dd48e8129f3fb7e1" name="a2f320fdca7c566d9dd48e8129f3fb7e1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Mapstate</b> (bool mapstate_inside)</td></tr>
+<tr class="separator:a2f320fdca7c566d9dd48e8129f3fb7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aaba9fbc36dfaeb22191c90415f0f1b"><td class="memItemLeft" align="right" valign="top"><a id="a5aaba9fbc36dfaeb22191c90415f0f1b" name="a5aaba9fbc36dfaeb22191c90415f0f1b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Scoreboardstate</b> (bool Scoreboard_inside)</td></tr>
+<tr class="separator:a5aaba9fbc36dfaeb22191c90415f0f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48dbbba894a0c0d15a905f14ca9db4b3"><td class="memItemLeft" align="right" valign="top"><a id="a48dbbba894a0c0d15a905f14ca9db4b3" name="a48dbbba894a0c0d15a905f14ca9db4b3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>bool_counter_state</b> (bool bool_counter_inside)</td></tr>
+<tr class="separator:a48dbbba894a0c0d15a905f14ca9db4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfe3a49b30376e7a86ac9dfccf891676"><td class="memItemLeft" align="right" valign="top"><a id="abfe3a49b30376e7a86ac9dfccf891676" name="abfe3a49b30376e7a86ac9dfccf891676"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>End_game</b> ()</td></tr>
+<tr class="separator:abfe3a49b30376e7a86ac9dfccf891676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:aa36aad9cd094aeb15204c81412db620e"><td class="memItemLeft" align="right" valign="top"><a id="aa36aad9cd094aeb15204c81412db620e" name="aa36aad9cd094aeb15204c81412db620e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>mapstate</b></td></tr>
+<tr class="separator:aa36aad9cd094aeb15204c81412db620e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68093cb78fa357cae84112cabb5b1643"><td class="memItemLeft" align="right" valign="top"><a id="a68093cb78fa357cae84112cabb5b1643" name="a68093cb78fa357cae84112cabb5b1643"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Scoreboard_state</b></td></tr>
+<tr class="separator:a68093cb78fa357cae84112cabb5b1643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa20f8b3c84573f9c173da7543a3b5fe6"><td class="memItemLeft" align="right" valign="top"><a id="aa20f8b3c84573f9c173da7543a3b5fe6" name="aa20f8b3c84573f9c173da7543a3b5fe6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>bool_counter</b> = false</td></tr>
+<tr class="separator:aa20f8b3c84573f9c173da7543a3b5fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353d35aa2d777bb1063b08a7b7783e9a"><td class="memItemLeft" align="right" valign="top"><a id="a353d35aa2d777bb1063b08a7b7783e9a" name="a353d35aa2d777bb1063b08a7b7783e9a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_H_S_1</b></td></tr>
+<tr class="separator:a353d35aa2d777bb1063b08a7b7783e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad06e1f8b8f066a3d62d0717d5c97125b"><td class="memItemLeft" align="right" valign="top"><a id="ad06e1f8b8f066a3d62d0717d5c97125b" name="ad06e1f8b8f066a3d62d0717d5c97125b"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_H_S_2</b></td></tr>
+<tr class="separator:ad06e1f8b8f066a3d62d0717d5c97125b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dd7374f1843b3c5e36cd4e534509b50"><td class="memItemLeft" align="right" valign="top"><a id="a9dd7374f1843b3c5e36cd4e534509b50" name="a9dd7374f1843b3c5e36cd4e534509b50"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_H_S_3</b></td></tr>
+<tr class="separator:a9dd7374f1843b3c5e36cd4e534509b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f54d0ac3f6574c312910504f88efb48"><td class="memItemLeft" align="right" valign="top"><a id="a8f54d0ac3f6574c312910504f88efb48" name="a8f54d0ac3f6574c312910504f88efb48"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_H_S_4</b></td></tr>
+<tr class="separator:a8f54d0ac3f6574c312910504f88efb48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0320737a13a269c60db79635f47d0d14"><td class="memItemLeft" align="right" valign="top"><a id="a0320737a13a269c60db79635f47d0d14" name="a0320737a13a269c60db79635f47d0d14"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_H_S_5</b></td></tr>
+<tr class="separator:a0320737a13a269c60db79635f47d0d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e52f91f0fc65804483eee2b06a93318"><td class="memItemLeft" align="right" valign="top"><a id="a9e52f91f0fc65804483eee2b06a93318" name="a9e52f91f0fc65804483eee2b06a93318"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_time_H_S_1</b></td></tr>
+<tr class="separator:a9e52f91f0fc65804483eee2b06a93318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaf59ccf100a0899b6cfef74d8e9635a"><td class="memItemLeft" align="right" valign="top"><a id="abaf59ccf100a0899b6cfef74d8e9635a" name="abaf59ccf100a0899b6cfef74d8e9635a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_time_H_S_2</b></td></tr>
+<tr class="separator:abaf59ccf100a0899b6cfef74d8e9635a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4006c9c1797aaf567246323d6f06e66b"><td class="memItemLeft" align="right" valign="top"><a id="a4006c9c1797aaf567246323d6f06e66b" name="a4006c9c1797aaf567246323d6f06e66b"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_time_H_S_3</b></td></tr>
+<tr class="separator:a4006c9c1797aaf567246323d6f06e66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad866c60738a3ef6a24b228b69f349a31"><td class="memItemLeft" align="right" valign="top"><a id="ad866c60738a3ef6a24b228b69f349a31" name="ad866c60738a3ef6a24b228b69f349a31"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_time_H_S_4</b></td></tr>
+<tr class="separator:ad866c60738a3ef6a24b228b69f349a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4246583089173304bec8a404ef15c7"><td class="memItemLeft" align="right" valign="top"><a id="a9b4246583089173304bec8a404ef15c7" name="a9b4246583089173304bec8a404ef15c7"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str_Player_time_H_S_5</b></td></tr>
+<tr class="separator:a9b4246583089173304bec8a404ef15c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39886229045fe853bc93c3b54711163b"><td class="memItemLeft" align="right" valign="top"><a id="a39886229045fe853bc93c3b54711163b" name="a39886229045fe853bc93c3b54711163b"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Timer</b></td></tr>
+<tr class="separator:a39886229045fe853bc93c3b54711163b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33afdb75913acc771d0cdf2eca019f2"><td class="memItemLeft" align="right" valign="top"><a id="ad33afdb75913acc771d0cdf2eca019f2" name="ad33afdb75913acc771d0cdf2eca019f2"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Timer_after</b></td></tr>
+<tr class="separator:ad33afdb75913acc771d0cdf2eca019f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816e15245fb09dd961498a5a975fa81e"><td class="memItemLeft" align="right" valign="top"><a id="a816e15245fb09dd961498a5a975fa81e" name="a816e15245fb09dd961498a5a975fa81e"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Text_End_game_0</b> = &quot;Brawo twoj czas wynosi: &quot;</td></tr>
+<tr class="separator:a816e15245fb09dd961498a5a975fa81e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e174871434aa5022da278b1988b5cb"><td class="memItemLeft" align="right" valign="top"><a id="a75e174871434aa5022da278b1988b5cb" name="a75e174871434aa5022da278b1988b5cb"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Text_End_game_1</b> = &quot;By zapisac sie w tabeli wynikow &quot;</td></tr>
+<tr class="separator:a75e174871434aa5022da278b1988b5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73058edf2ea15073e64735ada8720a92"><td class="memItemLeft" align="right" valign="top"><a id="a73058edf2ea15073e64735ada8720a92" name="a73058edf2ea15073e64735ada8720a92"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Text_End_game_2</b> = &quot;wpisz swoj nick w konsoli&quot;</td></tr>
+<tr class="separator:a73058edf2ea15073e64735ada8720a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7acce1c61fdd3a4e5fed20af24c59e"><td class="memItemLeft" align="right" valign="top"><a id="acb7acce1c61fdd3a4e5fed20af24c59e" name="acb7acce1c61fdd3a4e5fed20af24c59e"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Text_End_game_3</b> = &quot;i kliknij Enter&quot;</td></tr>
+<tr class="separator:acb7acce1c61fdd3a4e5fed20af24c59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab87e703b32889e614ea2d820912de2da"><td class="memItemLeft" align="right" valign="top"><a id="ab87e703b32889e614ea2d820912de2da" name="ab87e703b32889e614ea2d820912de2da"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Text_End_game_4</b> = &quot;ESC -&gt; powrot&quot;</td></tr>
+<tr class="separator:ab87e703b32889e614ea2d820912de2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af11728bf26d129b7a7d015d2bd6f5b49"><td class="memItemLeft" align="right" valign="top"><a id="af11728bf26d129b7a7d015d2bd6f5b49" name="af11728bf26d129b7a7d015d2bd6f5b49"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>nick</b></td></tr>
+<tr class="separator:af11728bf26d129b7a7d015d2bd6f5b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Statyczne atrybuty publiczne</h2></td></tr>
+<tr class="memitem:ac7e25215d3da900e32769f9fde0c10d6"><td class="memItemLeft" align="right" valign="top"><a id="ac7e25215d3da900e32769f9fde0c10d6" name="ac7e25215d3da900e32769f9fde0c10d6"></a>
+static SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><b>renderer</b> = nullptr</td></tr>
+<tr class="separator:ac7e25215d3da900e32769f9fde0c10d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ccd7325882226c289b2f448c5a3099"><td class="memItemLeft" align="right" valign="top"><a id="a95ccd7325882226c289b2f448c5a3099" name="a95ccd7325882226c289b2f448c5a3099"></a>
+static <a class="el" href="class_text.html">Text</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>textUI</b> = new <a class="el" href="class_text.html">Text</a>(&amp;manager)</td></tr>
+<tr class="separator:a95ccd7325882226c289b2f448c5a3099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac50bda5dab77dc40a78db21a883d23b3"><td class="memItemLeft" align="right" valign="top"><a id="ac50bda5dab77dc40a78db21a883d23b3" name="ac50bda5dab77dc40a78db21a883d23b3"></a>
+static SDL_Event&#160;</td><td class="memItemRight" valign="bottom"><b>event</b></td></tr>
+<tr class="separator:ac50bda5dab77dc40a78db21a883d23b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7718141b0607ec3a5b89c54f4a43b66"><td class="memItemLeft" align="right" valign="top"><a id="aa7718141b0607ec3a5b89c54f4a43b66" name="aa7718141b0607ec3a5b89c54f4a43b66"></a>
+static SDL_Color&#160;</td><td class="memItemRight" valign="bottom"><b>white</b></td></tr>
+<tr class="separator:aa7718141b0607ec3a5b89c54f4a43b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>C:/Users/slawe/source/repos/93b730f0-gr23-repo/Projekt/Sokoban/Sokoban/<a class="el" href="_game_8h_source.html">Game.h</a></li>
+<li>C:/Users/slawe/source/repos/93b730f0-gr23-repo/Projekt/Sokoban/Sokoban/Game.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,85 @@
+\hypertarget{_u_i_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+UI.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}ComponentSystem.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}TextureManager.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Game.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <SDL.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <SDL\_ttf.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//* klasa ustawiajaca polozenie tekstu w oknie}}
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_u_i}{UI}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_u_i}{UI}}() \{\};}
+\DoxyCodeLine{19     \textcolor{comment}{//* konstruktor z polozeniem tekstu}}
+\DoxyCodeLine{20     \textcolor{comment}{//* xpos -\/ polozenie na osi x}}
+\DoxyCodeLine{21     \textcolor{comment}{//* ypos -\/ polozenie na osi y}}
+\DoxyCodeLine{22     \textcolor{comment}{//* text -\/ tekst wyswietlany}}
+\DoxyCodeLine{23     \textcolor{comment}{//* font -\/ czcionka}}
+\DoxyCodeLine{24     \textcolor{comment}{//* color -\/ kolor czcionki}}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_u_i}{UI}}(\textcolor{keywordtype}{int} xpos, \textcolor{keywordtype}{int} ypos, std::string text, std::string font, SDL\_Color\& color) }
+\DoxyCodeLine{26         : \mbox{\hyperlink{class_text}{Text}}(text), Font(font), Color(color) \{}
+\DoxyCodeLine{27         pos.x = xpos;}
+\DoxyCodeLine{28         pos.y = ypos;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         SetText(\mbox{\hyperlink{class_text}{Text}}, Font);}
+\DoxyCodeLine{31     \}}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_u_i}{\string~UI}}() \{\}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{//* funkcja ustawiajaca tekst}}
+\DoxyCodeLine{35     \textcolor{comment}{//* text -\/ tekst }}
+\DoxyCodeLine{36     \textcolor{comment}{//* font -\/ czcionka}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} SetText(std::string text, std::string font) \{}
+\DoxyCodeLine{38         Free\_All();}
+\DoxyCodeLine{39         surface = TTF\_RenderText\_Blended(Game::textUI-\/>GetFont(font), text.c\_str(), Color);}
+\DoxyCodeLine{40         Texture = SDL\_CreateTextureFromSurface(Game::renderer, surface);}
+\DoxyCodeLine{41         SDL\_QueryTexture(Texture, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \&pos.w, \&pos.h);}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//* funkcja wyswietlajaca teksture, odwolujaca sie do klasy virtualnej bazowej}}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} draw()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{46         SDL\_RenderCopy(Game::renderer, Texture, \textcolor{keyword}{nullptr}, \&pos);}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{comment}{//* funkcja zwalniajaca pamiec }}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} Free\_All()}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{if} (surface == NULL) \{}
+\DoxyCodeLine{53             \textcolor{comment}{//*cout << "{}Text surface already free'd"{} << endl;}}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{56             SDL\_FreeSurface(surface);}
+\DoxyCodeLine{57             surface = NULL;}
+\DoxyCodeLine{58             \textcolor{comment}{//*cout << "{}Free'd surface \(\backslash\)n"{};}}
+\DoxyCodeLine{59         \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordflow}{if} (Texture == NULL) \{}
+\DoxyCodeLine{62             \textcolor{comment}{//*cout << "{}Could not free memory for text \(\backslash\)"{}"{} << text << "{}\(\backslash\)"{}. Error from SDL is: "{} << TTF\_GetError() << endl;}}
+\DoxyCodeLine{63         \}}
+\DoxyCodeLine{64         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{65             SDL\_DestroyTexture(Texture);}
+\DoxyCodeLine{66             Texture = NULL;}
+\DoxyCodeLine{67         \}}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{private}:}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{//* inicjalizacja zmiennych dla tektu}}
+\DoxyCodeLine{73     std::string Font;}
+\DoxyCodeLine{74     std::string \mbox{\hyperlink{class_text}{Text}};}
+\DoxyCodeLine{75     SDL\_Color Color;}
+\DoxyCodeLine{76     SDL\_Texture* Texture = NULL;}
+\DoxyCodeLine{77     SDL\_Surface* surface = NULL;}
+\DoxyCodeLine{78     SDL\_Rect pos;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \};}
+
+\end{DoxyCode}

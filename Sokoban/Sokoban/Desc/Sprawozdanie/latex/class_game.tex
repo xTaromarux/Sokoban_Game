@@ -1,0 +1,137 @@
+\hypertarget{class_game}{}\doxysection{Dokumentacja klasy Game}
+\label{class_game}\index{Game@{Game}}
+\doxysubsection*{Typy publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_acd4d2b1bae53e21a9ae2d56bcb85ea10}\label{class_game_acd4d2b1bae53e21a9ae2d56bcb85ea10}} 
+enum {\bfseries group\+Labels} \+: std\+::size\+\_\+t \{ \newline
+{\bfseries group\+Map}
+, {\bfseries group\+Player}
+, {\bfseries group\+Menu}
+, {\bfseries group\+Box\+Colliders}
+, \newline
+{\bfseries group\+Points}
+, {\bfseries group\+Scoreboard}
+, {\bfseries group\+Colliders}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_a6fb6ab188f447a0b1448f77426a2ad79}\label{class_game_a6fb6ab188f447a0b1448f77426a2ad79}} 
+void {\bfseries init} (const char $\ast$title, int xpos, int ypos, int width, int height, bool fullscreen)
+\item 
+\mbox{\Hypertarget{class_game_adb5563f62c0c82e3e42ec36501aa5698}\label{class_game_adb5563f62c0c82e3e42ec36501aa5698}} 
+void {\bfseries handle\+Events} ()
+\item 
+\mbox{\Hypertarget{class_game_a79df6376b332d63c9eca0dcee30305c3}\label{class_game_a79df6376b332d63c9eca0dcee30305c3}} 
+void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{class_game_a15ddd769261d923827a3cdf41499c843}\label{class_game_a15ddd769261d923827a3cdf41499c843}} 
+void {\bfseries render} ()
+\item 
+\mbox{\Hypertarget{class_game_ad4f36a72a2d06696f7973788606f57fc}\label{class_game_ad4f36a72a2d06696f7973788606f57fc}} 
+void {\bfseries clean} ()
+\item 
+\mbox{\Hypertarget{class_game_afd9af52dcc5835f2a8c37f441a256b9d}\label{class_game_afd9af52dcc5835f2a8c37f441a256b9d}} 
+bool {\bfseries running} ()
+\item 
+\mbox{\Hypertarget{class_game_a2f320fdca7c566d9dd48e8129f3fb7e1}\label{class_game_a2f320fdca7c566d9dd48e8129f3fb7e1}} 
+void {\bfseries Mapstate} (bool mapstate\+\_\+inside)
+\item 
+\mbox{\Hypertarget{class_game_a5aaba9fbc36dfaeb22191c90415f0f1b}\label{class_game_a5aaba9fbc36dfaeb22191c90415f0f1b}} 
+void {\bfseries Scoreboardstate} (bool Scoreboard\+\_\+inside)
+\item 
+\mbox{\Hypertarget{class_game_a48dbbba894a0c0d15a905f14ca9db4b3}\label{class_game_a48dbbba894a0c0d15a905f14ca9db4b3}} 
+void {\bfseries bool\+\_\+counter\+\_\+state} (bool bool\+\_\+counter\+\_\+inside)
+\item 
+\mbox{\Hypertarget{class_game_abfe3a49b30376e7a86ac9dfccf891676}\label{class_game_abfe3a49b30376e7a86ac9dfccf891676}} 
+void {\bfseries End\+\_\+game} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_aa36aad9cd094aeb15204c81412db620e}\label{class_game_aa36aad9cd094aeb15204c81412db620e}} 
+bool {\bfseries mapstate}
+\item 
+\mbox{\Hypertarget{class_game_a68093cb78fa357cae84112cabb5b1643}\label{class_game_a68093cb78fa357cae84112cabb5b1643}} 
+bool {\bfseries Scoreboard\+\_\+state}
+\item 
+\mbox{\Hypertarget{class_game_aa20f8b3c84573f9c173da7543a3b5fe6}\label{class_game_aa20f8b3c84573f9c173da7543a3b5fe6}} 
+bool {\bfseries bool\+\_\+counter} = false
+\item 
+\mbox{\Hypertarget{class_game_a353d35aa2d777bb1063b08a7b7783e9a}\label{class_game_a353d35aa2d777bb1063b08a7b7783e9a}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+\+H\+\_\+\+S\+\_\+1}
+\item 
+\mbox{\Hypertarget{class_game_ad06e1f8b8f066a3d62d0717d5c97125b}\label{class_game_ad06e1f8b8f066a3d62d0717d5c97125b}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+\+H\+\_\+\+S\+\_\+2}
+\item 
+\mbox{\Hypertarget{class_game_a9dd7374f1843b3c5e36cd4e534509b50}\label{class_game_a9dd7374f1843b3c5e36cd4e534509b50}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+\+H\+\_\+\+S\+\_\+3}
+\item 
+\mbox{\Hypertarget{class_game_a8f54d0ac3f6574c312910504f88efb48}\label{class_game_a8f54d0ac3f6574c312910504f88efb48}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+\+H\+\_\+\+S\+\_\+4}
+\item 
+\mbox{\Hypertarget{class_game_a0320737a13a269c60db79635f47d0d14}\label{class_game_a0320737a13a269c60db79635f47d0d14}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+\+H\+\_\+\+S\+\_\+5}
+\item 
+\mbox{\Hypertarget{class_game_a9e52f91f0fc65804483eee2b06a93318}\label{class_game_a9e52f91f0fc65804483eee2b06a93318}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+time\+\_\+\+H\+\_\+\+S\+\_\+1}
+\item 
+\mbox{\Hypertarget{class_game_abaf59ccf100a0899b6cfef74d8e9635a}\label{class_game_abaf59ccf100a0899b6cfef74d8e9635a}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+time\+\_\+\+H\+\_\+\+S\+\_\+2}
+\item 
+\mbox{\Hypertarget{class_game_a4006c9c1797aaf567246323d6f06e66b}\label{class_game_a4006c9c1797aaf567246323d6f06e66b}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+time\+\_\+\+H\+\_\+\+S\+\_\+3}
+\item 
+\mbox{\Hypertarget{class_game_ad866c60738a3ef6a24b228b69f349a31}\label{class_game_ad866c60738a3ef6a24b228b69f349a31}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+time\+\_\+\+H\+\_\+\+S\+\_\+4}
+\item 
+\mbox{\Hypertarget{class_game_a9b4246583089173304bec8a404ef15c7}\label{class_game_a9b4246583089173304bec8a404ef15c7}} 
+std\+::string {\bfseries str\+\_\+\+Player\+\_\+time\+\_\+\+H\+\_\+\+S\+\_\+5}
+\item 
+\mbox{\Hypertarget{class_game_a39886229045fe853bc93c3b54711163b}\label{class_game_a39886229045fe853bc93c3b54711163b}} 
+std\+::string {\bfseries Timer}
+\item 
+\mbox{\Hypertarget{class_game_ad33afdb75913acc771d0cdf2eca019f2}\label{class_game_ad33afdb75913acc771d0cdf2eca019f2}} 
+std\+::string {\bfseries Timer\+\_\+after}
+\item 
+\mbox{\Hypertarget{class_game_a816e15245fb09dd961498a5a975fa81e}\label{class_game_a816e15245fb09dd961498a5a975fa81e}} 
+std\+::string {\bfseries Text\+\_\+\+End\+\_\+game\+\_\+0} = \char`\"{}Brawo twoj czas wynosi\+: \char`\"{}
+\item 
+\mbox{\Hypertarget{class_game_a75e174871434aa5022da278b1988b5cb}\label{class_game_a75e174871434aa5022da278b1988b5cb}} 
+std\+::string {\bfseries Text\+\_\+\+End\+\_\+game\+\_\+1} = \char`\"{}By zapisac sie w tabeli wynikow \char`\"{}
+\item 
+\mbox{\Hypertarget{class_game_a73058edf2ea15073e64735ada8720a92}\label{class_game_a73058edf2ea15073e64735ada8720a92}} 
+std\+::string {\bfseries Text\+\_\+\+End\+\_\+game\+\_\+2} = \char`\"{}wpisz swoj nick w konsoli\char`\"{}
+\item 
+\mbox{\Hypertarget{class_game_acb7acce1c61fdd3a4e5fed20af24c59e}\label{class_game_acb7acce1c61fdd3a4e5fed20af24c59e}} 
+std\+::string {\bfseries Text\+\_\+\+End\+\_\+game\+\_\+3} = \char`\"{}i kliknij Enter\char`\"{}
+\item 
+\mbox{\Hypertarget{class_game_ab87e703b32889e614ea2d820912de2da}\label{class_game_ab87e703b32889e614ea2d820912de2da}} 
+std\+::string {\bfseries Text\+\_\+\+End\+\_\+game\+\_\+4} = \char`\"{}ESC -\/$>$ powrot\char`\"{}
+\item 
+\mbox{\Hypertarget{class_game_af11728bf26d129b7a7d015d2bd6f5b49}\label{class_game_af11728bf26d129b7a7d015d2bd6f5b49}} 
+std\+::string {\bfseries nick}
+\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_ac7e25215d3da900e32769f9fde0c10d6}\label{class_game_ac7e25215d3da900e32769f9fde0c10d6}} 
+static SDL\+\_\+\+Renderer $\ast$ {\bfseries renderer} = nullptr
+\item 
+\mbox{\Hypertarget{class_game_a95ccd7325882226c289b2f448c5a3099}\label{class_game_a95ccd7325882226c289b2f448c5a3099}} 
+static \mbox{\hyperlink{class_text}{Text}} $\ast$ {\bfseries text\+UI} = new \mbox{\hyperlink{class_text}{Text}}(\&manager)
+\item 
+\mbox{\Hypertarget{class_game_ac50bda5dab77dc40a78db21a883d23b3}\label{class_game_ac50bda5dab77dc40a78db21a883d23b3}} 
+static SDL\+\_\+\+Event {\bfseries event}
+\item 
+\mbox{\Hypertarget{class_game_aa7718141b0607ec3a5b89c54f4a43b66}\label{class_game_aa7718141b0607ec3a5b89c54f4a43b66}} 
+static SDL\+\_\+\+Color {\bfseries white}
+\end{DoxyCompactItemize}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/Game.\+h\item 
+C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/Game.\+cpp\end{DoxyCompactItemize}

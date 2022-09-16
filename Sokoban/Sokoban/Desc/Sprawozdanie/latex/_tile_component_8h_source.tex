@@ -1,0 +1,56 @@
+\hypertarget{_tile_component_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Tile\+Component.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}ComponentSystem.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}TransformComponent.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}SpriteComponent.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}SDL.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_tile_component}{TileComponent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_transform_component}{TransformComponent}}* transform;}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_sprite_component}{SpriteComponent}}* sprite;}
+\DoxyCodeLine{12     SDL\_Rect tileRect;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} tileID;}
+\DoxyCodeLine{14     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* path;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \mbox{\hyperlink{class_tile_component}{TileComponent}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \mbox{\hyperlink{class_tile_component}{TileComponent}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} w, \textcolor{keywordtype}{int} h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{19         tileRect.x = x;}
+\DoxyCodeLine{20         tileRect.y = y;}
+\DoxyCodeLine{21         tileRect.w = w;}
+\DoxyCodeLine{22         tileRect.h = h;}
+\DoxyCodeLine{23         tileID = id;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keywordflow}{switch} (tileID)}
+\DoxyCodeLine{26         \{}
+\DoxyCodeLine{27         \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{28             path = \textcolor{stringliteral}{"{}Assets/floor.png"{}};}
+\DoxyCodeLine{29             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{30         \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{31             path = \textcolor{stringliteral}{"{}Assets/wall.png"{}};}
+\DoxyCodeLine{32             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{33         \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{34             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{35         \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{36             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{37         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{38             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} init()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{44         entity-\/>addComponent<\mbox{\hyperlink{class_transform_component}{TransformComponent}}>((float)tileRect.x, (\textcolor{keywordtype}{float})tileRect.y, tileRect.w, tileRect.h, 1);}
+\DoxyCodeLine{45         transform = \&entity-\/>getComponent<\mbox{\hyperlink{class_transform_component}{TransformComponent}}>();}
+\DoxyCodeLine{46         entity-\/>addComponent<\mbox{\hyperlink{class_sprite_component}{SpriteComponent}}>(path);}
+\DoxyCodeLine{47         sprite = \&entity-\/>getComponent<\mbox{\hyperlink{class_sprite_component}{SpriteComponent}}>();}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \};}
+
+\end{DoxyCode}

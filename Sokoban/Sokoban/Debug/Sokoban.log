@@ -1,0 +1,82 @@
+﻿  Collision.cpp
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(58,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(59,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\ComponentSystem.h(105,33): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TileComponent.h(44): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „T &Entity::addComponent<TransformComponent,float,float,int&,int&,int>(float &&,float &&,int &,int &,int &&)” funkcji szablon
+          with
+          [
+              T=TransformComponent
+          ]
+  ComponentMove.cpp
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(58,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(59,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\ComponentSystem.h(105,33): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TileComponent.h(44): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „T &Entity::addComponent<TransformComponent,float,float,int&,int&,int>(float &&,float &&,int &,int &,int &&)” funkcji szablon
+          with
+          [
+              T=TransformComponent
+          ]
+  Game.cpp
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(58,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(59,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\ComponentSystem.h(105,33): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TileComponent.h(44): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „T &Entity::addComponent<TransformComponent,float,float,int&,int&,int>(float &&,float &&,int &,int &,int &&)” funkcji szablon
+          with
+          [
+              T=TransformComponent
+          ]
+  main.cpp
+  Map.cpp
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(58,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(59,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\ComponentSystem.h(105,33): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TileComponent.h(44): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „T &Entity::addComponent<TransformComponent,float,float,int&,int&,int>(float &&,float &&,int &,int &,int &&)” funkcji szablon
+          with
+          [
+              T=TransformComponent
+          ]
+  Menu.cpp
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(58,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(59,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\ComponentSystem.h(105,33): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TileComponent.h(44): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „T &Entity::addComponent<TransformComponent,float,float,int&,int&,int>(float &&,float &&,int &,int &,int &&)” funkcji szablon
+          with
+          [
+              T=TransformComponent
+          ]
+  ScoreBoard.cpp
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(58,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TransformComponent.h(59,16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\ComponentSystem.h(105,33): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Sokoban\TileComponent.h(44): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „T &Entity::addComponent<TransformComponent,float,float,int&,int&,int>(float &&,float &&,int &,int &,int &&)” funkcji szablon
+          with
+          [
+              T=TransformComponent
+          ]
+  TextureManager.cpp
+  Generowanie kodu...
+  Sokoban.vcxproj -> C:\Users\slawe\source\repos\93b730f0-gr23-repo\Projekt\Sokoban\Debug\Sokoban.exe

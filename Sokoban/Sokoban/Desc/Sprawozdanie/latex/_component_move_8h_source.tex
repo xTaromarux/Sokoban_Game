@@ -1,0 +1,32 @@
+\hypertarget{_component_move_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Component\+Move.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Collision.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}ComponentSystem.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include  "{}Timer.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include  "{}UI.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include  "{}Game.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{extern} \mbox{\hyperlink{class_manager}{Manager}} manager;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//* klasa dot. poruszania sie obiektow }}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_component_move}{ComponentMove}}\{}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_timer}{Timer}}* mTimer;}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_game}{Game}}* game;}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_text}{Text}}* textUI;}
+\DoxyCodeLine{16     }
+\DoxyCodeLine{17     \mbox{\hyperlink{class_component_move}{ComponentMove}}(\mbox{\hyperlink{class_game}{Game}}* game, \mbox{\hyperlink{class_timer}{Timer}}* mTimer);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \mbox{\hyperlink{class_component_move}{\string~ComponentMove}}();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{comment}{//* funkcja odswierzajaca}}
+\DoxyCodeLine{22     \textcolor{comment}{//* zawierajaca odwolania do obiektow oraz grup z obiektami}}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} update(\textcolor{keywordtype}{int} counter, \textcolor{keyword}{class} \mbox{\hyperlink{class_entity}{Entity}}\& Player, \textcolor{keyword}{class} std::vector<Entity *> \&boxcolliders, \textcolor{keyword}{class} std::vector<Entity*> \&points, \textcolor{keyword}{class} std::vector<Entity*> \&colliders, \textcolor{keyword}{class} \mbox{\hyperlink{class_entity}{Entity}}\& ui, \textcolor{keyword}{class} \mbox{\hyperlink{class_entity}{Entity}}\& End\_game\_0, \textcolor{keyword}{class} \mbox{\hyperlink{class_entity}{Entity}}\& End\_game\_1, \textcolor{keyword}{class} \mbox{\hyperlink{class_entity}{Entity}}\& End\_game\_2);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27 \};}
+
+\end{DoxyCode}

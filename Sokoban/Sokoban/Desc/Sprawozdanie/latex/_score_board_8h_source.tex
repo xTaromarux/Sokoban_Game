@@ -1,0 +1,57 @@
+\hypertarget{_score_board_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Score\+Board.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Menu.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Components.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}SpriteComponent.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//* rozszerzenie dzialania szablonu Manager}}
+\DoxyCodeLine{9 \textcolor{keyword}{extern} \mbox{\hyperlink{class_manager}{Manager}} manager;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{//* klasa zawierajaca dzialanie menu}}
+\DoxyCodeLine{12 \textcolor{comment}{//* z klasa bazowa Component }}
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_score_board}{ScoreBoard}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{comment}{//* wskazniki do klas}}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_sprite_component}{SpriteComponent}}* sprite;}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_map}{Map}}* map;}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_game}{Game}}* game;}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_timer}{Timer}}* mTimer;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{comment}{//* zmienna okreslajaca stan animacji obiektu}}
+\DoxyCodeLine{23     \textcolor{keywordtype}{bool} Menuanimation = \textcolor{keyword}{false};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{//* zmnienne do zapisu sciezki plikow}}
+\DoxyCodeLine{26     std::string SB\_file\_players;}
+\DoxyCodeLine{27     std::string SB\_file\_time;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{class_score_board}{ScoreBoard}}();}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_score_board}{ScoreBoard}}(\mbox{\hyperlink{class_game}{Game}}* game);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{comment}{//* kolstruktor przypisujacy stan do zmiennej}}
+\DoxyCodeLine{33     \textcolor{comment}{//* isAnimated -\/ wskazanie stanu}}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_score_board}{ScoreBoard}}(\textcolor{keywordtype}{bool} isAnimated) \{}
+\DoxyCodeLine{35         Menuanimation = isAnimated;}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_score_board}{\string~ScoreBoard}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{//* funkcja z zdefiniowanymi opcjami menu}}
+\DoxyCodeLine{40     \textcolor{comment}{//* odwolania do obiektow}}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} Options(\mbox{\hyperlink{class_entity}{Entity}}\& H\_S, \mbox{\hyperlink{class_entity}{Entity}}\& Name, \mbox{\hyperlink{class_entity}{Entity}}\& Time\_H\_S, \mbox{\hyperlink{class_entity}{Entity}}\& Back);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//* funkcja odswierzajaca stan opcji wybranej}}
+\DoxyCodeLine{45     \textcolor{comment}{//* odwolania do obiektow oraz ich grupy}}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} update(\textcolor{keyword}{class} std::vector<Entity*> Scoreboard\_g, \mbox{\hyperlink{class_entity}{Entity}}\& Back);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{comment}{//* funkcja ladujaca z plikow dane dot. tabeli wynikow}}
+\DoxyCodeLine{49     \textcolor{comment}{//* SB\_file\_players -\/> sciezka pliku z nazwami graczy}}
+\DoxyCodeLine{50     \textcolor{comment}{//* SB\_file\_time -\/> sciezka pliku z czasami graczy}}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} loadScoreBoard(std::string SB\_file\_players, std::string SB\_file\_time);}
+\DoxyCodeLine{52 \};}
+
+\end{DoxyCode}

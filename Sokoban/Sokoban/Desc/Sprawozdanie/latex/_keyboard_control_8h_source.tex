@@ -1,0 +1,79 @@
+\hypertarget{_keyboard_control_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Keyboard\+Control.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Game.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Components.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}TextureManager.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Map.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}TileComponent.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}ComponentMove.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{//* klasa pozwalajaca na kontrole postacia za pomoca klawiatury}}
+\DoxyCodeLine{10 \textcolor{comment}{//* z klasa bazowa Component}}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_keyboard_control}{KeyboardControl}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{13     \textcolor{comment}{//* wskazniki do klas}}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_transform_component}{TransformComponent}}* transform;}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_sprite_component}{SpriteComponent}}* sprite;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{comment}{//* funkcja inicjalizacyjna, odwolujaca sie do klasy virtualnej bazowej}}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} init()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{19         transform = \&entity-\/>getComponent<\mbox{\hyperlink{class_transform_component}{TransformComponent}}>();}
+\DoxyCodeLine{20         sprite = \&entity-\/>getComponent<\mbox{\hyperlink{class_sprite_component}{SpriteComponent}}>();}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{comment}{//* funkcja odsiwierzajaca klikniecie, odwolujaca sie do klasy virtualnej bazowej}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} update()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{25         \textcolor{keywordflow}{if} (Game::event.type == SDL\_KEYDOWN) \{}
+\DoxyCodeLine{26             \textcolor{keywordflow}{switch} (Game::event.key.keysym.sym)}
+\DoxyCodeLine{27             \{}
+\DoxyCodeLine{28             \textcolor{keywordflow}{case} SDLK\_w:}
+\DoxyCodeLine{29                 transform-\/>velocity.y = -\/1;}
+\DoxyCodeLine{30                 sprite-\/>play(\textcolor{stringliteral}{"{}Walk"{}});}
+\DoxyCodeLine{31                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{32             \textcolor{keywordflow}{case} SDLK\_s:}
+\DoxyCodeLine{33                 transform-\/>velocity.y = 1;}
+\DoxyCodeLine{34                 sprite-\/>play(\textcolor{stringliteral}{"{}Walk"{}});}
+\DoxyCodeLine{35                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{36             \textcolor{keywordflow}{case} SDLK\_a:}
+\DoxyCodeLine{37                 transform-\/>velocity.x = -\/1;}
+\DoxyCodeLine{38                 sprite-\/>play(\textcolor{stringliteral}{"{}Walk"{}});}
+\DoxyCodeLine{39                 sprite-\/>spriteFlip = SDL\_FLIP\_HORIZONTAL;}
+\DoxyCodeLine{40                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{41             \textcolor{keywordflow}{case} SDLK\_d:}
+\DoxyCodeLine{42                 transform-\/>velocity.x = 1;}
+\DoxyCodeLine{43                 sprite-\/>play(\textcolor{stringliteral}{"{}Walk"{}});}
+\DoxyCodeLine{44                 sprite-\/>spriteFlip = SDL\_FLIP\_NONE;}
+\DoxyCodeLine{45                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{46             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{47                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{48             \}}
+\DoxyCodeLine{49         \}}
+\DoxyCodeLine{50         \textcolor{keywordflow}{if} (Game::event.type == SDL\_KEYUP) \{}
+\DoxyCodeLine{51             \textcolor{keywordflow}{switch} (Game::event.key.keysym.sym)}
+\DoxyCodeLine{52             \{}
+\DoxyCodeLine{53             \textcolor{keywordflow}{case} SDLK\_w:}
+\DoxyCodeLine{54                 transform-\/>velocity.y = 0;}
+\DoxyCodeLine{55                 sprite-\/>play(\textcolor{stringliteral}{"{}Idle"{}});}
+\DoxyCodeLine{56                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{57             \textcolor{keywordflow}{case} SDLK\_s:}
+\DoxyCodeLine{58                 transform-\/>velocity.y = 0;}
+\DoxyCodeLine{59                 sprite-\/>play(\textcolor{stringliteral}{"{}Idle"{}});}
+\DoxyCodeLine{60                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{61             \textcolor{keywordflow}{case} SDLK\_a:}
+\DoxyCodeLine{62                 transform-\/>velocity.x = 0;}
+\DoxyCodeLine{63                 sprite-\/>play(\textcolor{stringliteral}{"{}Idle"{}});}
+\DoxyCodeLine{64                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65             \textcolor{keywordflow}{case} SDLK\_d:}
+\DoxyCodeLine{66                 transform-\/>velocity.x = 0;}
+\DoxyCodeLine{67                 sprite-\/>play(\textcolor{stringliteral}{"{}Idle"{}});}
+\DoxyCodeLine{68                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{69             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{70                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{71             \}}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74 \};}
+
+\end{DoxyCode}

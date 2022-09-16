@@ -1,0 +1,68 @@
+\hypertarget{_timer_8h_source}{}\doxysection{C\+:/\+Users/slawe/source/repos/93b730f0-\/gr23-\/repo/\+Projekt/\+Sokoban/\+Sokoban/\+Timer.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}SDL.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//* klasa tworzaca zegar}}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_timer}{Timer}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     }
+\DoxyCodeLine{15     \textcolor{comment}{//* inicjalizacja zegara}}
+\DoxyCodeLine{16     \textcolor{keyword}{static} \mbox{\hyperlink{class_timer}{Timer}}* Instance();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{comment}{//* funkcja zerujaca inicjalizacje}}
+\DoxyCodeLine{19     \textcolor{keyword}{static} \textcolor{keywordtype}{void} Release();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{comment}{//* funkcja zerujaca odmierzanie}}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} Reset();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{comment}{//* funkcja zerujaca minuty}}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} ResetMin();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{comment}{//* funkcja zwracjaca tikniecie}}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} deltaTime();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{//* funkcja pozaujaca "{}skale"{}}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} TimeScale(\textcolor{keywordtype}{float} t);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} TimeScale();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{//* funkcja odswierzajaca}}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} Update();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{//* funkcja ustawiajaca godiny}}
+\DoxyCodeLine{38     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} Hour();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{comment}{//* funkcja ustawiajaca minuty}}
+\DoxyCodeLine{41     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} Minute();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{//* funkcja dodajaca godziny}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} AddHour();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{//* funkcja dodajaca minuty}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} AddMinute();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{//* inicjalizacja zmiennych dot. czasu}}
+\DoxyCodeLine{52     \textcolor{keyword}{static} \mbox{\hyperlink{class_timer}{Timer}}* sInstance;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mStartTicks;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mLastTicks;}
+\DoxyCodeLine{56     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mMinute = 0;}
+\DoxyCodeLine{57     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mHour = 0;}
+\DoxyCodeLine{58     \textcolor{keywordtype}{int} mDeltaTime;}
+\DoxyCodeLine{59     \textcolor{keywordtype}{float} mTimeScale;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \mbox{\hyperlink{class_timer}{Timer}}();}
+\DoxyCodeLine{62     \mbox{\hyperlink{class_timer}{\string~Timer}}();}
+\DoxyCodeLine{63 \};}
+
+\end{DoxyCode}
